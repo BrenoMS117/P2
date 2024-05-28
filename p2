@@ -1,0 +1,98 @@
+package prova;
+
+import java.util.Random;
+
+public class A1 {
+    static Random rado = new Random();
+
+    public static void main(String[] args) {
+        // Q1();
+        // Q2();
+        // Q3();
+
+    }
+
+    public static void Q1() {
+        int alunos, idade, idade20 = 0, graduacao,
+                manha = 0, noite = 0;
+        double mediaid = 0, qempre = 0, empregado;
+        for (alunos = 0; alunos < 1000; alunos++) {
+            idade = rado.nextInt(17, 50);
+            mediaid += idade;
+            if (idade <= 20) {
+                idade20++;
+            }
+
+        }
+        do {
+            manha = rado.nextInt(1000);
+            noite = rado.nextInt(1000);
+        } while (noite + manha != 1000);
+        mediaid /= 1000;
+        qempre = (qempre / 1000) * 100;
+        graduacao = rado.nextInt(1, 1000);
+        empregado = rado.nextInt(1, 1000);
+        empregado = (empregado / 1000) * 100;
+        System.out.println("Alunos matriculados no Horario da Manha: " + manha);
+        System.out.println("Alunos matriculados no Horario da noite: " + noite);
+        System.out.println("Quantidade de Alunos menores de 20 Anos: " + idade20);
+        System.out.printf("media de idade dos alunos: %.2f%n", mediaid);
+        System.out.println("Quantidade de Alunos de nivel Superior:" + graduacao);
+        System.out.printf("Percentual de Alunos Empregados: %.2f", empregado);
+    }
+
+    public static void Q2() {
+        int[][] desenho = new int[5][10];
+        for (int i = 0; i <= 4; i++) {
+            for (int j = 0; j <= 9; j++) {
+                if (i == 0 && j >= 0 && j <= 9) {
+                    System.out.print("+");
+                }
+                if (i > 0 && i <= 3 && j >= 0 && j <= 8) {
+                    System.out.print(" ");
+                }
+                if (i > 0 && i <= 3 && j >= 0 && j == 9) {
+                    System.out.print("|");
+                }
+                if (i == 4 && j >= 0 && j <= 9) {
+                    System.out.print("+");
+                }
+
+            }
+            System.out.println();
+        }
+
+    }
+
+    public static void Q3() {
+        int idade, idade20 = 0, graduacao,
+                manha = 0, noite = 0;
+        double mediaid = 0, qempre = 0, empregado;
+        int[] alunos = new int[1000];
+        for (int i = 0; i < alunos.length; i++) {
+            alunos[i] = rado.nextInt(1, 1000);
+            idade = rado.nextInt(17, 50);
+            mediaid += idade;
+            if (idade <= 20) {
+                idade20++;
+            }
+
+        }
+        do {
+            manha = rado.nextInt(1000);
+            noite = rado.nextInt(1000);
+        } while (noite + manha != 1000);
+        mediaid /= 1000;
+        qempre = (qempre / 1000) * 100;
+        graduacao = rado.nextInt(1, 1000);
+        empregado = rado.nextInt(1, 1000);
+        empregado = (empregado / 1000) * 100;
+        System.out.println("Alunos matriculados no Horario da Manha: " + manha);
+        System.out.println("Alunos matriculados no Horario da noite: " + noite);
+        System.out.println("Quantidade de Alunos menores de 20 Anos: " + idade20);
+        System.out.printf("media de idade dos alunos: %.2f%n", mediaid);
+        System.out.println("Quantidade de Alunos de nivel Superior:" + graduacao);
+        System.out.printf("Percentual de Alunos Empregados: %.2f\n", empregado);
+    }
+
+}
